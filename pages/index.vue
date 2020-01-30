@@ -3,8 +3,8 @@
     <site-header show-gallery />
     <div id="text-content">
       <section class="content-split">
-        <!--<div class="content-split-1" v-html="parseMarkdown(Content['content-1'])"></div>-->
-        <!--<div class="content-split-2" v-html="parseMarkdown(Content['content-2'])"></div>-->
+        <div class="content-split-1" v-html="parseMarkdown(Content['home']['content-1'])"></div>
+        <div class="content-split-2" v-html="parseMarkdown(Content['home']['content-2'])"></div>
       </section>
       <what-we-do />
       <testimonial />
@@ -21,7 +21,7 @@ import Footer from '../components/Footer'
 import WhatWeDo from '../components/WhatWeDo'
 import Testimonial from '../components/Testimonial'
 
-// import Content from '@/assets/content/pages/pages.json'
+import Content from '@/assets/content/pages/pages.json'
 
 export default {
   components: {
@@ -42,7 +42,7 @@ export default {
   },
   data () {
     return {
-      // Content
+      Content
     }
   }
 }

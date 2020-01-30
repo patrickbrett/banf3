@@ -25,18 +25,15 @@ html {
   margin: 0;
 }
 
-.content-full {
-  width: 80vw;
-  max-width: 1600px;
-  margin: 0 auto;
-}
-
-.content-split {
-  display: flex;
+.content-full, .content-split {
   width: 80vw;
   max-width: 1600px;
   margin: 40px auto;
   text-align: justify;
+}
+
+.content-split {
+  display: flex;
   justify-content: space-between;
 }
 

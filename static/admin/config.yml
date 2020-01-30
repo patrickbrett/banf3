@@ -28,7 +28,7 @@ collections:
     label: 'Pages'
     format: 'json'
     folder: 'assets/content/pages'
-    create: true
+    create: false
     slug: '{{slug}}'
     editor:
       preview: false

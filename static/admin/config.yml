@@ -29,3 +29,21 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Content 1', name: 'content-1', widget: 'markdown' }
+  - name: 'general'
+    label: 'General'
+    format: 'json'
+    folder: 'assets/content/general'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Address', name: 'address', widget: 'string' }
+      - { label: 'Phone Number', name: 'phone-number', widget: 'string' }
+      - { label: 'Open Hours', name: 'open-hours', widget: 'markdown' }
+      - { label: 'Email Address', name: 'email', widget: 'string' }
+      - { label: 'Show Facebook Button', name: 'show-facebook', widget: 'boolean' }
+      - { label: 'Facebook Page URL', name: 'facebook-page-url', widget: 'string' }
+      - { label: 'Show Instagram Button', name: 'show-instagram', widget: 'boolean' }
+      - { label: 'Instagram Page URL', name: 'instagram-page-url', widget: 'string' }

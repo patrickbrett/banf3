@@ -1,22 +1,10 @@
 <template>
   <div class="container">
-    <site-header show-gallery />
+    <site-header />
     <div id="text-content">
       <section class="content-split">
-        <div class="content-split-1">
-          <h2>Welcome!</h2>
-          <p>
-            Bentleigh Art ’n’ Frame is a family-owned framing shop that has been
-            serving the local community since 2011.
-          </p>
-          <p>
-            We pride ourselves on the highest quality service at great prices. If
-            you’re tired of second-rate framing, come in and have a chat about
-            what our personal, professional service can do for you!
-          </p>
-        </div>
-        <div class="content-split-2">
-          <h2>About Us</h2>
+        <div class="content-full">
+          <h1>About Us</h1>
           <p>
             Bentleigh Art ’n’ Frame is a family business through and through. We
             use only the highest quality materials and assemble our custom frames

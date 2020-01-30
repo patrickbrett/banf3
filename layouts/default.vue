@@ -5,9 +5,10 @@
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Questrial", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -24,32 +25,36 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.content-full {
+  width: 80vw;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+.content-split {
+  display: flex;
+  width: 80vw;
+  max-width: 1600px;
+  margin: 40px auto;
+  text-align: justify;
+  justify-content: space-between;
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+.content-split-1, .content-split-2 {
+  width: 45%;
 }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.content-split p {
+  margin: 1em 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .content-split {
+    flex-direction: column;
+  }
+
+  .content-split-1, .content-split-2 {
+    width: 100%;
+  }
 }
 </style>

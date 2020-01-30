@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>f_logo_RGB-White_1024 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="-3.73041615e-15 0 70 0 70 70 -3.73041615e-15 70"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-1896.000000, -144.000000)">
+            <g id="f_logo_RGB-White_1024-Copy" transform="translate(1896.000000, 144.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M70,35.2138969 C70,15.7657844 54.3299805,0 35,0 C15.6700195,0 0,15.7657844 0,35.2138969 C0,52.7901708 12.7989941,67.35827 29.53125,70 L29.53125,45.392914 L20.6445312,45.392914 L20.6445312,35.2138969 L29.53125,35.2138969 L29.53125,27.4558352 C29.53125,18.6303523 34.7565039,13.7554285 42.7512695,13.7554285 C46.5805566,13.7554285 50.5859375,14.4431999 50.5859375,14.4431999 L50.5859375,23.1091198 L46.1725195,23.1091198 C41.8246582,23.1091198 40.46875,25.8235473 40.46875,28.6083338 L40.46875,35.2138969 L50.1757812,35.2138969 L48.6240234,45.392914 L40.46875,45.392914 L40.46875,70 C57.2010059,67.35827 70,52.7901708 70,35.2138969" id="Fill-1" fill="#000000" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -6,29 +6,6 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'home'
-    label: 'Home'
-    format: 'json'
-    folder: 'assets/content/home'
-    create: false
-    slug: '{{slug}}'
-    editor:
-      preview: false
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Content 1', name: 'content-1', widget: 'markdown' }
-      - { label: 'Content 2', name: 'content-2', widget: 'markdown' }
-  - name: 'about'
-    label: 'About'
-    format: 'json'
-    folder: 'assets/content/about'
-    create: false
-    slug: '{{slug}}'
-    editor:
-      preview: false
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Content 1', name: 'content-1', widget: 'markdown' }
   - name: 'general'
     label: 'General'
     format: 'json'
@@ -47,3 +24,54 @@ collections:
       - { label: 'Facebook Page URL', name: 'facebook-page-url', widget: 'string' }
       - { label: 'Show Instagram Button', name: 'show-instagram', widget: 'boolean' }
       - { label: 'Instagram Page URL', name: 'instagram-page-url', widget: 'string' }
+  - name: 'pages'
+    label: 'Pages'
+    format: 'json'
+    folder: 'assets/content/pages'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - label: 'Home'
+        name: 'home'
+        widget: 'object'
+        fields:
+          - { label: 'Content 1', name: 'content-1', widget: 'markdown' }
+          - { label: 'Content 2', name: 'content-2', widget: 'markdown' }
+      - label: 'About'
+        name: 'about'
+        widget: 'object'
+        fields:
+          - { label: 'Content 1', name: 'content-1', widget: 'markdown' }
+      - label: 'Gallery'
+        name: 'gallery'
+        widget: 'object'
+        fields:
+          - { label: 'Content 1', name: 'content-1', widget: 'markdown' }
+      - label: 'Services'
+        name: 'services'
+        widget: 'object'
+        fields:
+          - { label: 'Content 1', name: 'content-1', widget: 'markdown' }
+      - label: 'Picture Framing'
+        name: 'picture-framing'
+        widget: 'object'
+        fields:
+          - { label: 'Content 1', name: 'content-1', widget: 'markdown' }
+      - label: 'Custom Frames'
+        name: 'custom-frames'
+        widget: 'object'
+        fields:
+          - { label: 'Content 1', name: 'content-1', widget: 'markdown' }
+      - label: 'Canvas Stretching'
+        name: 'canvas-stretching'
+        widget: 'object'
+        fields:
+          - { label: 'Content 1', name: 'content-1', widget: 'markdown' }
+      - label: 'Contact'
+        name: 'contact'
+        widget: 'object'
+        fields:
+          - { label: 'Content 1', name: 'content-1', widget: 'markdown' }

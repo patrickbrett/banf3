@@ -31,7 +31,7 @@ export default {
     testimonial: Testimonial
   },
   methods: {
-    parseMarkdown(content) {
+    parseMarkdown (content) {
       return markdown.toHTML(content)
     }
   },

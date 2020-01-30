@@ -184,7 +184,6 @@ li a {
   margin: 0;
   max-height: 0;
   overflow: hidden;
-  visibility: hidden; /* TODO: bug - still clickable */
   transition: all 1s;
 }
 

@@ -29,6 +29,11 @@ export default {
     siteFooter: Footer,
     whatWeDo: WhatWeDo,
     testimonial: Testimonial
+  },
+  head () {
+    return {
+      title: "Contact | Bentleigh Art 'n' Frame"
+    }
   }
 }
 </script>

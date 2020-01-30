@@ -52,6 +52,11 @@ export default {
     siteFooter: Footer,
     whatWeDo: WhatWeDo,
     testimonial: Testimonial
+  },
+  head () {
+    return {
+      title: "Bentleigh Art 'n' Frame"
+    }
   }
 }
 </script>

@@ -2,14 +2,8 @@
   <div class="container">
     <site-header />
     <div id="text-content">
-      <section class="content-split">
-        <div class="content-full">
-          <h1>Services</h1>
-          <p>
-            Work in progress - check back soon!
-          </p>
-        </div>
-      </section>
+        <section class="content-full" v-html="parseMarkdown(Content['services']['content-1'])">
+        </section>
       <what-we-do />
       <testimonial />
     </div>
@@ -18,10 +12,14 @@
 </template>
 
 <script>
+import { markdown } from 'markdown'
+
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import WhatWeDo from '../../components/WhatWeDo'
 import Testimonial from '../../components/Testimonial'
+
+import Content from '@/assets/content/pages/pages.json'
 
 export default {
   components: {
@@ -30,9 +28,19 @@ export default {
     whatWeDo: WhatWeDo,
     testimonial: Testimonial
   },
+  methods: {
+    parseMarkdown (content) {
+      return markdown.toHTML(content)
+    }
+  },
   head () {
     return {
       title: "Services | Bentleigh Art 'n' Frame"
+    }
+  },
+  data () {
+    return {
+      Content
     }
   }
 }

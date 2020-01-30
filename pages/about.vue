@@ -2,9 +2,7 @@
   <div class="container">
     <site-header />
     <div id="text-content">
-      <section class="content-split">
-        <div class="content-full" v-html="parseMarkdown(Content['about']['content-1'])">
-        </div>
+      <section class="content-full" v-html="parseMarkdown(Content['about']['content-1'])">
       </section>
       <what-we-do />
       <testimonial />

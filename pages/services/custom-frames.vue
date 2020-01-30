@@ -2,13 +2,7 @@
   <div class="container">
     <site-header />
     <div id="text-content">
-      <section class="content-split">
-        <div class="content-full">
-          <h1>Custom Frames</h1>
-          <p>
-            Work in progress - check back soon!
-          </p>
-        </div>
+      <section class="content-full" v-html="parseMarkdown(Content['custom-frames']['content-1'])">
       </section>
       <what-we-do />
       <testimonial />
@@ -18,10 +12,14 @@
 </template>
 
 <script>
+import { markdown } from 'markdown'
+
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import WhatWeDo from '../../components/WhatWeDo'
 import Testimonial from '../../components/Testimonial'
+
+import Content from '@/assets/content/pages/pages.json'
 
 export default {
   components: {
@@ -30,9 +28,19 @@ export default {
     whatWeDo: WhatWeDo,
     testimonial: Testimonial
   },
+  methods: {
+    parseMarkdown (content) {
+      return markdown.toHTML(content)
+    }
+  },
   head () {
     return {
       title: "Custom Frames | Bentleigh Art 'n' Frame"
+    }
+  },
+  data () {
+    return {
+      Content
     }
   }
 }

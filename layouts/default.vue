@@ -5,8 +5,6 @@
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
-
 html {
   font-family: 'Questrial', Arial, sans-serif;
   font-size: 16px;

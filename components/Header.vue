@@ -7,15 +7,24 @@
         alt="Bentleigh Art 'n' Frame logo"
       />
       <div id="pre-nav-contact">
-        <div><img :src="require('@/assets/icon/phone.svg')" /><span><a href="tel:03-9557-4268">(03) 9557 4268</a></span></div>
         <div>
-          <img :src="require('@/assets/icon/map.svg')" /><span>343 Centre Rd,
-          Bentleigh VIC 3204</span>
+          <img :src="require('@/assets/icon/phone.svg')" /><span
+            ><a href="tel:03-9557-4268">(03) 9557 4268</a></span
+          >
+        </div>
+        <div>
+          <img :src="require('@/assets/icon/map.svg')" /><span
+            >343 Centre Rd, Bentleigh VIC 3204</span
+          >
         </div>
       </div>
       <div id="pre-nav-social">
-        <img :src="require('@/assets/icon/facebook.svg')" />
-        <img :src="require('@/assets/icon/instagram.svg')" />
+        <a v-if="General['show-facebook']" :href="General['facebook-url']"
+          ><img :src="require('@/assets/icon/facebook.svg')"
+        /></a>
+        <a v-if="General['show-instagram']" :href="General['instagram-url']"
+          ><img :src="require('@/assets/icon/instagram.svg')"
+        /></a>
       </div>
     </section>
     <nav id="nav-main">
@@ -26,16 +35,30 @@
         <li class="list-inner-container">
           <nuxt-link to="/services">Services</nuxt-link>
           <ul class="list-inner">
-            <li><nuxt-link to="/services/picture-framing">Picture Framing</nuxt-link></li>
-            <li><nuxt-link to="/services/custom-frames">Custom Frames</nuxt-link></li>
-            <li><nuxt-link to="/services/canvas-stretching">Canvas Stretching</nuxt-link></li>
+            <li>
+              <nuxt-link to="/services/picture-framing"
+                >Picture Framing</nuxt-link
+              >
+            </li>
+            <li>
+              <nuxt-link to="/services/custom-frames">Custom Frames</nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/services/canvas-stretching"
+                >Canvas Stretching</nuxt-link
+              >
+            </li>
           </ul>
         </li>
         <li><nuxt-link to="/contact">Contact</nuxt-link></li>
       </ul>
     </nav>
     <nav id="nav-mobile" :class="isNavOpen ? 'active' : ''">
-      <img id="mobile-nav-button" :src="require('@/assets/icon/nav.svg')" @click="toggleNavOpen" />
+      <img
+        id="mobile-nav-button"
+        :src="require('@/assets/icon/nav.svg')"
+        @click="toggleNavOpen"
+      />
       <ul>
         <li><nuxt-link to="/" exact>Home</nuxt-link></li>
         <li><nuxt-link to="/about">About</nuxt-link></li>
@@ -43,9 +66,19 @@
         <li class="list-inner-container">
           <nuxt-link to="/services">Services</nuxt-link>
           <ul class="list-inner">
-            <li><nuxt-link to="/services/picture-framing">Picture Framing</nuxt-link></li>
-            <li><nuxt-link to="/services/custom-frames">Custom Frames</nuxt-link></li>
-            <li><nuxt-link to="/services/canvas-stretching">Canvas Stretching</nuxt-link></li>
+            <li>
+              <nuxt-link to="/services/picture-framing"
+                >Picture Framing</nuxt-link
+              >
+            </li>
+            <li>
+              <nuxt-link to="/services/custom-frames">Custom Frames</nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/services/canvas-stretching"
+                >Canvas Stretching</nuxt-link
+              >
+            </li>
           </ul>
         </li>
         <li><nuxt-link to="/contact">Contact</nuxt-link></li>
@@ -59,14 +92,17 @@
 </template>
 
 <script>
+import General from '../assets/content/general/general.json'
+
 export default {
-  data () {
+  data() {
     return {
-      isNavOpen: false
+      isNavOpen: false,
+      General
     }
   },
   methods: {
-    toggleNavOpen () {
+    toggleNavOpen() {
       this.isNavOpen = !this.isNavOpen
     }
   },
@@ -116,9 +152,17 @@ export default {
   margin-right: 20px;
 }
 
+#pre-nav-social a {
+  margin-left: 10px;
+}
+
+#pre-nav-social a:hover {
+  opacity: 0.7;
+  transition: 0.4s opacity;
+}
+
 #pre-nav-social img {
   width: 50px;
-  margin-left: 10px;
 }
 
 #nav-main {

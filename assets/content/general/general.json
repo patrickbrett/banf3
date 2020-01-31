@@ -7,5 +7,6 @@
   "show-facebook": true,
   "facebook-page-url": "https://facebook.com",
   "title": "General",
-  "email": "info@bentleighartnframe.com.au"
+  "email": "info@bentleighartnframe.com.au",
+  "gallery-transition-seconds": 15
 }

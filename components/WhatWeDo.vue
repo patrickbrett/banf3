@@ -1,29 +1,29 @@
 <template>
-<section class="content-full" id="what-we-do">
-  <div>
-    <h2>What We Do</h2>
-    <div class="service-list">
-      <div class="service-item">
-        <nuxt-link to="/services/picture-framing">
-          <img :src="require('@/assets/img/gallery-1.jpg')" />
-          <h4>Picture Framing</h4>
-        </nuxt-link>
-      </div>
-      <div class="service-item">
-        <nuxt-link to="/services/custom-frames">
-          <img :src="require('@/assets/img/gallery-1.jpg')" />
-          <h4>Custom Frames</h4>
-        </nuxt-link>
-      </div>
-      <div class="service-item">
-        <nuxt-link to="/services/canvas-stretching">
-          <img :src="require('@/assets/img/gallery-1.jpg')" />
-          <h4>Canvas Stretching</h4>
-        </nuxt-link>
+  <section class="content-full" id="what-we-do">
+    <div>
+      <h2>What We Do</h2>
+      <div class="service-list">
+        <div class="service-item">
+          <nuxt-link to="/services/picture-framing">
+            <img :src="require('@/assets/img/thumbnail-1.jpg')" />
+            <h4>Picture Framing</h4>
+          </nuxt-link>
+        </div>
+        <div class="service-item">
+          <nuxt-link to="/services/custom-frames">
+            <img :src="require('@/assets/img/thumbnail-2.jpg')" />
+            <h4>Custom Frames</h4>
+          </nuxt-link>
+        </div>
+        <div class="service-item">
+          <nuxt-link to="/services/canvas-stretching">
+            <img :src="require('@/assets/img/thumbnail-3.jpg')" />
+            <h4>Canvas Stretching</h4>
+          </nuxt-link>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 </template>
 
 <script>
@@ -31,12 +31,6 @@ export default {}
 </script>
 
 <style>
-.content-full {
-  width: 80vw;
-  max-width: 1600px;
-  margin: 0 auto;
-}
-
 #what-we-do {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
@@ -50,7 +44,7 @@ export default {}
 
 .service-item {
   background: #fff;
-  border: 4px solid #A9815E;
+  border: 4px solid #a9815e;
   margin-right: 20px;
   transition: all 0.4s;
 }

@@ -8,7 +8,7 @@
 @import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
 
 html {
-  font-family: "Questrial", Arial, sans-serif;
+  font-family: 'Questrial', Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -25,7 +25,8 @@ html {
   margin: 0;
 }
 
-.content-full, .content-split {
+.content-full,
+.content-split {
   width: 80vw;
   max-width: 1600px;
   margin: 40px auto;
@@ -37,10 +38,12 @@ html {
   justify-content: space-between;
 }
 
-.content-split-1, .content-split-2 {
+.content-split-1,
+.content-split-2 {
   width: 45%;
 }
 
+.content-full p,
 .content-split p {
   margin: 1em 0;
 }
@@ -50,7 +53,8 @@ html {
     flex-direction: column;
   }
 
-  .content-split-1, .content-split-2 {
+  .content-split-1,
+  .content-split-2 {
     width: 100%;
   }
 }

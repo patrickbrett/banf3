@@ -6,6 +6,40 @@
         :src="require('@/assets/img/logo.png')"
         alt="Bentleigh Art 'n' Frame logo"
       />
+      <nav id="nav-mobile" :class="isNavOpen ? 'active' : ''">
+        <img
+          id="mobile-nav-button"
+          :src="require('@/assets/icon/nav.svg')"
+          @click="toggleNavOpen"
+        />
+        <ul>
+          <li><nuxt-link to="/" exact>Home</nuxt-link></li>
+          <li><nuxt-link to="/about">About</nuxt-link></li>
+          <li><nuxt-link to="/gallery">Gallery</nuxt-link></li>
+          <li class="list-inner-container">
+            <nuxt-link to="/services">Services</nuxt-link>
+            <ul class="list-inner">
+              <li>
+                <nuxt-link to="/services/picture-framing"
+                  >Picture Framing</nuxt-link
+                >
+              </li>
+              <li>
+                <nuxt-link to="/services/custom-frames"
+                  >Custom Frames</nuxt-link
+                >
+              </li>
+              <li>
+                <nuxt-link to="/services/canvas-stretching"
+                  >Canvas Stretching</nuxt-link
+                >
+              </li>
+            </ul>
+          </li>
+          <li><nuxt-link to="/contact">Contact</nuxt-link></li>
+        </ul>
+        <!--<div id="mobile-nav-marker">about</div>-->
+      </nav>
       <div id="pre-nav-contact">
         <div>
           <img :src="require('@/assets/icon/phone.svg')" /><span
@@ -19,10 +53,18 @@
         </div>
       </div>
       <div id="pre-nav-social">
-        <a v-if="General['show-facebook']" :href="General['facebook-url']"
+        <a
+          v-if="General['show-facebook']"
+          :href="General['facebook-page-url']"
+          target="_blank"
+          rel="noopener"
           ><img :src="require('@/assets/icon/facebook.svg')"
         /></a>
-        <a v-if="General['show-instagram']" :href="General['instagram-url']"
+        <a
+          v-if="General['show-instagram']"
+          :href="General['instagram-page-url']"
+          target="_blank"
+          rel="noopener"
           ><img :src="require('@/assets/icon/instagram.svg')"
         /></a>
       </div>
@@ -53,40 +95,17 @@
         <li><nuxt-link to="/contact">Contact</nuxt-link></li>
       </ul>
     </nav>
-    <nav id="nav-mobile" :class="isNavOpen ? 'active' : ''">
-      <img
-        id="mobile-nav-button"
-        :src="require('@/assets/icon/nav.svg')"
-        @click="toggleNavOpen"
-      />
-      <ul>
-        <li><nuxt-link to="/" exact>Home</nuxt-link></li>
-        <li><nuxt-link to="/about">About</nuxt-link></li>
-        <li><nuxt-link to="/gallery">Gallery</nuxt-link></li>
-        <li class="list-inner-container">
-          <nuxt-link to="/services">Services</nuxt-link>
-          <ul class="list-inner">
-            <li>
-              <nuxt-link to="/services/picture-framing"
-                >Picture Framing</nuxt-link
-              >
-            </li>
-            <li>
-              <nuxt-link to="/services/custom-frames">Custom Frames</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/services/canvas-stretching"
-                >Canvas Stretching</nuxt-link
-              >
-            </li>
-          </ul>
-        </li>
-        <li><nuxt-link to="/contact">Contact</nuxt-link></li>
-      </ul>
-      <!--<div id="mobile-nav-marker">about</div>-->
-    </nav>
     <section v-if="showGallery" id="header-gallery">
-      <img class="gallery-img" :src="require('@/assets/img/gallery-1.jpg')" />
+      <transition name="slide">
+        <img
+          :key="i"
+          :alt="`Header photo ${i}`"
+          v-for="i of Array.from(Array(maxGallery).keys())"
+          v-if="gallery === i"
+          class="gallery-img"
+          :src="require(`@/assets/img/gallery-${i + 1}.jpg`)"
+        />
+      </transition>
     </section>
   </header>
 </template>
@@ -98,13 +117,21 @@ export default {
   data() {
     return {
       isNavOpen: false,
-      General
+      General,
+      gallery: 1,
+      maxGallery: 4
     }
   },
   methods: {
     toggleNavOpen() {
       this.isNavOpen = !this.isNavOpen
+    },
+    nextGallery() {
+      this.gallery = (this.gallery + 1) % this.maxGallery
     }
+  },
+  created() {
+    setInterval(this.nextGallery, General['gallery-transition-seconds'] * 1000)
   },
   props: {
     showGallery: {
@@ -229,14 +256,16 @@ li a {
   max-height: 0;
   overflow: hidden;
   transition: all 1s;
+  z-index: 5;
 }
 
 #nav-main .list-inner li {
-  padding: 20px;
   white-space: nowrap;
 }
 
-.list-inner li a {
+#nav-main ul.list-inner > li a {
+  display: block;
+  padding: 20px;
   color: #000;
 }
 
@@ -252,6 +281,9 @@ li a {
 
 .gallery-img {
   width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 @media screen and (max-width: 1000px) {
@@ -284,7 +316,7 @@ li a {
     max-height: 60px;
     transition: 0.4s all;
     overflow: hidden;
-    padding-right: 40px;
+    margin-top: 20px;
   }
 
   #nav-mobile.active {
@@ -361,5 +393,40 @@ li a {
     margin-left: 0;
     opacity: 1;
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active {
+  transition: transform 1s ease-out;
+}
+
+.slide-leave-active {
+  transition: transform 1s ease-in, opacity 1s;
+}
+
+.slide-enter {
+  /*opacity: 0;*/
+  transform: translateX(100vw);
+}
+
+.slide-leave-to {
+  opacity: 0;
+  transform: scale(0.7);
+}
+
+#header-gallery {
+  height: calc(100vw * 1089 / 2560);
+  position: relative;
+  background: #000;
+  z-index: 1;
 }
 </style>

@@ -20,10 +20,31 @@ collections:
       - { label: 'Phone Number', name: 'phone-number', widget: 'string' }
       - { label: 'Open Hours', name: 'open-hours', widget: 'markdown' }
       - { label: 'Email Address', name: 'email', widget: 'string' }
-      - { label: 'Show Facebook Button', name: 'show-facebook', widget: 'boolean' }
-      - { label: 'Facebook Page URL', name: 'facebook-page-url', widget: 'string' }
-      - { label: 'Show Instagram Button', name: 'show-instagram', widget: 'boolean' }
-      - { label: 'Instagram Page URL', name: 'instagram-page-url', widget: 'string' }
+      - {
+          label: 'Show Facebook Button',
+          name: 'show-facebook',
+          widget: 'boolean',
+        }
+      - {
+          label: 'Facebook Page URL',
+          name: 'facebook-page-url',
+          widget: 'string',
+        }
+      - {
+          label: 'Show Instagram Button',
+          name: 'show-instagram',
+          widget: 'boolean',
+        }
+      - {
+          label: 'Instagram Page URL',
+          name: 'instagram-page-url',
+          widget: 'string',
+        }
+      - {
+          label: 'Gallery Transition Time (seconds)',
+          name: 'gallery-transition-seconds',
+          widget: 'number',
+        }
   - name: 'pages'
     label: 'Pages'
     format: 'json'

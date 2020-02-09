@@ -1,5 +1,6 @@
 {
-  "show-instagram": true,
+  "gallery-transition-seconds": 15,
+  "show-instagram": false,
   "phone-number": "(03) 9557 4268",
   "instagram-page-url": "https://instagram.com",
   "open-hours": "Mon-Fri: 10am - 5pm\n\nSat: 10am - 3pm\n\nClosed Sun and public holidays",
@@ -7,6 +8,5 @@
   "show-facebook": true,
   "facebook-page-url": "https://facebook.com",
   "title": "General",
-  "email": "info@bentleighartnframe.com.au",
-  "gallery-transition-seconds": 15
+  "email": "info@bentleighartnframe.com.au"
 }
